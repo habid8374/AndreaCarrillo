@@ -10,6 +10,7 @@ import FAQ from './components/FAQ';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
       <Blog />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
