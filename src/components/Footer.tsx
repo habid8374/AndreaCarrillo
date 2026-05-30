@@ -100,7 +100,7 @@ export default function Footer() {
       <div className="border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-dm text-xs text-gray-400">
-            © 2025 Dra. Andrea Carrillo · Todos los derechos reservados
+            © 2026 Dra. Andrea Carrillo · Todos los derechos reservados
           </p>
           <div className="flex items-center gap-4">
             <button onClick={() => setModal('privacy')} className="font-dm text-xs text-slate hover:text-mint transition-colors duration-200">
@@ -115,6 +115,24 @@ export default function Footer() {
               Términos y Condiciones
             </button>
           </div>
+        </div>
+        {/* Developer credit */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 flex items-center justify-center gap-2">
+          <span className="font-dm text-xs text-gray-300">Desarrollado por</span>
+          <img
+            src="/axentia-logo.png"
+            alt="Axentia Technologies"
+            className="h-5 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-200"
+            onError={(e) => {
+              const el = e.currentTarget;
+              el.style.display = 'none';
+              const next = el.nextElementSibling as HTMLElement | null;
+              if (next) next.style.display = 'inline';
+            }}
+          />
+          <span className="font-dm text-xs font-medium text-gray-400 hover:text-mint transition-colors duration-200 hidden">
+            Axentia Technologies
+          </span>
         </div>
       </div>
     </footer>

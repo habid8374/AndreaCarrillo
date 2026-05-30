@@ -1,39 +1,47 @@
 import { useEffect, useRef } from 'react';
-import { Sparkles, Activity, Anchor, Zap, Heart, Star, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import {
+  BlanqueamientoIcon,
+  OrtodonciaIcon,
+  ImplantesIcon,
+  EndodonciaIcon,
+  OdontopediatriaIcon,
+  EsteticaIcon,
+} from './ServiceIcons';
 
 const services = [
   {
-    icon: Sparkles,
+    Icon: BlanqueamientoIcon,
     name: 'Blanqueamiento Dental',
     desc: 'Recupera el brillo natural de tu sonrisa con nuestra tecnología LED de última generación, sin dañar el esmalte.',
     img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
-    icon: Activity,
+    Icon: OrtodonciaIcon,
     name: 'Ortodoncia',
     desc: 'Alineamos tu sonrisa con brackets tradicionales o alineadores invisibles adaptados a tu estilo de vida.',
     img: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
-    icon: Anchor,
+    Icon: ImplantesIcon,
     name: 'Implantes Dentales',
     desc: 'Solución permanente y estética para la pérdida dental. Recupera la funcionalidad y confianza en tu sonrisa.',
     img: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
-    icon: Zap,
+    Icon: EndodonciaIcon,
     name: 'Endodoncia',
     desc: 'Salvamos tu diente natural con tratamientos de conducto modernos, indoloros y de alta precisión.',
     img: 'https://images.unsplash.com/photo-1588776814546-1ffedde5d1f4?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
-    icon: Heart,
+    Icon: OdontopediatriaIcon,
     name: 'Odontopediatría',
     desc: 'Cuidamos la salud oral de los más pequeños en un ambiente amigable, divertido y libre de miedo.',
     img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
-    icon: Star,
+    Icon: EsteticaIcon,
     name: 'Estética Dental',
     desc: 'Diseño de sonrisa digital, carillas de porcelana y tratamientos estéticos para una imagen impecable.',
     img: 'https://images.unsplash.com/photo-1581391569744-6e4d5d0b9e2e?auto=format&fit=crop&w=600&h=360&q=80',
@@ -77,7 +85,7 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {services.map(({ icon: Icon, name, desc, img }, i) => (
+          {services.map(({ Icon, name, desc, img }, i) => (
             <div
               key={name}
               ref={(el) => { cardsRef.current[i] = el; }}
