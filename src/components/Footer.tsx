@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 flex items-center justify-center gap-2">
           <span className="font-dm text-xs text-gray-300">Desarrollado por</span>
           <img
-            src="/axentia-logo.png"
+            src="/axentia-logo.ico"
             alt="Axentia Technologies"
             className="h-5 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-200"
             onError={(e) => {
