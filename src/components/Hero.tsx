@@ -15,12 +15,13 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="relative overflow-hidden bg-white pt-28 lg:pt-32 pb-32">
+    <section id="inicio" className="relative overflow-hidden bg-white min-h-screen flex flex-col">
       {/* Decorative blob */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-mint-pale rounded-bl-[120px] -z-0 opacity-60" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Main content — grows to fill the viewport */}
+      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 lg:pt-36 pb-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left column */}
           <div className="space-y-6">
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-mint-pale text-mint text-sm font-dm font-medium">
@@ -68,7 +69,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right column — image + logo */}
+          {/* Right column — image */}
           <div className="relative flex justify-center lg:justify-end">
             <img
               src="/hero_consultorio.jpg"
@@ -77,9 +78,11 @@ export default function Hero() {
             />
           </div>
         </div>
+      </div>
 
-        {/* Floating booking card */}
-        <div className="relative mt-10 lg:-mt-16 bg-white rounded-2xl shadow-md p-6 lg:p-8 max-w-4xl mx-auto">
+      {/* Floating booking card */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="bg-white rounded-2xl shadow-md p-6 lg:p-8">
           <div className="flex items-center gap-2 mb-4">
             <CalendarDays className="w-5 h-5 text-mint" />
             <h3 className="font-cormorant text-xl font-semibold text-carbon">Reservar Cita Rápida</h3>
