@@ -45,7 +45,7 @@ export default function Hero() {
               <span className="text-mint">Transforman</span> Vidas
             </h1>
 
-            <p className="font-dm text-lg text-slate leading-relaxed max-w-md">
+            <p className="font-dm text-lg text-carbon lg:text-slate leading-relaxed max-w-md font-medium lg:font-normal">
               Odontología moderna, trato humano y resultados que duran toda la vida.
             </p>
 
