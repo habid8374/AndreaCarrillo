@@ -37,13 +37,15 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 pt-1">
               {[
-                { icon: AtSign, label: 'Instagram' },
-                { icon: Globe, label: 'Facebook' },
-                { icon: MessageCircle, label: 'WhatsApp' },
-              ].map(({ icon: Icon, label }) => (
+                { icon: AtSign, label: 'Instagram', href: 'https://www.instagram.com/ortodoncia_andreacarrillo?igsh=MTlkZW9odjhuMDBhZw==' },
+                { icon: Globe, label: 'Facebook', href: '#' },
+                { icon: MessageCircle, label: 'WhatsApp', href: '#' },
+              ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-8 h-8 rounded-full bg-gray-100 hover:bg-mint hover:text-white flex items-center justify-center text-gray-500 transition-colors duration-200"
                 >
