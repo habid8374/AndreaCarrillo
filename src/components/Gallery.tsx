@@ -28,7 +28,7 @@ export default function Gallery() {
     }
   };
 
-  const handleEnded = (i: number) => setPlaying(null);
+  const handleEnded = () => setPlaying(null);
 
   return (
     <section id="galeria" className="bg-bone py-20 lg:py-24">
@@ -57,7 +57,7 @@ export default function Gallery() {
                 loop
                 playsInline
                 preload="metadata"
-                onEnded={() => handleEnded(i)}
+                onEnded={handleEnded}
                 className="w-full h-full object-cover"
               />
 
