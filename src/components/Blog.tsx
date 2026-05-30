@@ -9,7 +9,7 @@ const posts = [
     excerpt: 'Descubre los secretos que los odontólogos usan en su vida diaria para mantener una sonrisa brillante y saludable durante años.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1588776814546-1ffbb3dcface?w=400',
+    img: '/srv-ortodoncia.jpg',
     category: 'Ortodoncia',
     title: '¿Cuándo es el Momento Ideal para la Ortodoncia?',
     date: '5 Jun 2025',
