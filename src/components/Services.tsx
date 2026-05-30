@@ -14,37 +14,37 @@ const services = [
     Icon: BlanqueamientoIcon,
     name: 'Blanqueamiento Dental',
     desc: 'Recupera el brillo natural de tu sonrisa con nuestra tecnología LED de última generación, sin dañar el esmalte.',
-    img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&h=360&q=80',
+    img: '/srv-blanqueamiento.jpg',
   },
   {
     Icon: OrtodonciaIcon,
     name: 'Ortodoncia',
     desc: 'Alineamos tu sonrisa con brackets tradicionales o alineadores invisibles adaptados a tu estilo de vida.',
-    img: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&h=360&q=80',
+    img: '/srv-ortodoncia.jpg',
   },
   {
     Icon: ImplantesIcon,
     name: 'Implantes Dentales',
     desc: 'Solución permanente y estética para la pérdida dental. Recupera la funcionalidad y confianza en tu sonrisa.',
-    img: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&h=360&q=80',
+    img: '/srv-implantes.jpg',
   },
   {
     Icon: EndodonciaIcon,
     name: 'Endodoncia',
     desc: 'Salvamos tu diente natural con tratamientos de conducto modernos, indoloros y de alta precisión.',
-    img: 'https://images.unsplash.com/photo-1588776814546-1ffedde5d1f4?auto=format&fit=crop&w=600&h=360&q=80',
+    img: '/srv-endodoncia.jpg',
   },
   {
     Icon: OdontopediatriaIcon,
     name: 'Odontopediatría',
     desc: 'Cuidamos la salud oral de los más pequeños en un ambiente amigable, divertido y libre de miedo.',
-    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&h=360&q=80',
+    img: '/srv-odontopediatria.jpg',
   },
   {
     Icon: EsteticaIcon,
     name: 'Estética Dental',
     desc: 'Diseño de sonrisa digital, carillas de porcelana y tratamientos estéticos para una imagen impecable.',
-    img: 'https://images.unsplash.com/photo-1581391569744-6e4d5d0b9e2e?auto=format&fit=crop&w=600&h=360&q=80',
+    img: '/srv-estetica.jpg',
   },
 ];
 
