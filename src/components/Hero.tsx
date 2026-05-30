@@ -15,74 +15,74 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="relative overflow-hidden bg-white min-h-screen flex flex-col">
-      {/* Decorative blob */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-mint-pale rounded-bl-[120px] -z-0 opacity-60" />
+    <section id="inicio" className="relative overflow-hidden min-h-screen flex flex-col">
 
-      {/* Main content — grows to fill the viewport */}
-      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 lg:pt-36 pb-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-          {/* Left column */}
-          <div className="space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-mint-pale text-mint text-sm font-dm font-medium">
-              ✦ Odontología de Confianza
-            </span>
+      {/* Foto de fondo — ocupa toda la pantalla */}
+      <img
+        src="/hero_consultorio.jpg"
+        alt="Dra. Andrea Carrillo"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
 
-            <h1 className="font-cormorant text-5xl lg:text-6xl font-bold leading-tight text-carbon">
-              Sonrisas que<br />
-              <span className="text-mint">Transforman</span> Vidas
-            </h1>
+      {/* Overlay desktop: degradado izquierda → derecha */}
+      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/92 via-white/65 to-transparent" />
 
-            <p className="font-dm text-lg text-slate leading-relaxed max-w-md">
-              Odontología moderna, trato humano y resultados que duran toda la vida.
-            </p>
+      {/* Overlay móvil: degradado arriba → abajo */}
+      <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-white/88 via-white/70 to-white/30" />
 
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#contacto"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-mint hover:bg-mint-dark text-white font-dm font-medium transition-colors duration-200"
-              >
-                Agenda tu Cita
-                <CalendarDays className="w-4 h-4" />
-              </a>
-              <a
-                href="#servicios"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-mint text-mint hover:bg-mint-pale font-dm font-medium transition-colors duration-200"
-              >
-                Ver Servicios
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+      {/* Contenido principal — centrado verticalmente */}
+      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-8 pt-28 lg:pt-36 pb-8">
+        <div className="w-full lg:max-w-xl space-y-6">
 
-            {/* Mini stats */}
-            <div className="flex flex-wrap gap-6 pt-2">
-              {[
-                { value: '8+', label: 'Años de Experiencia' },
-                { value: '2.000+', label: 'Pacientes' },
-                { value: '⭐ 4.9/5', label: 'Calificación' },
-              ].map((s) => (
-                <div key={s.label} className="text-center">
-                  <p className="font-cormorant text-2xl font-bold text-carbon">{s.value}</p>
-                  <p className="font-dm text-xs text-slate">{s.label}</p>
-                </div>
-              ))}
-            </div>
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-mint-pale text-mint text-sm font-dm font-medium">
+            ✦ Odontología de Confianza
+          </span>
+
+          <h1 className="font-cormorant text-5xl lg:text-6xl font-bold leading-tight text-carbon">
+            Sonrisas que<br />
+            <span className="text-mint">Transforman</span> Vidas
+          </h1>
+
+          <p className="font-dm text-lg text-slate leading-relaxed max-w-md">
+            Odontología moderna, trato humano y resultados que duran toda la vida.
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-mint hover:bg-mint-dark text-white font-dm font-medium transition-colors duration-200"
+            >
+              Agenda tu Cita
+              <CalendarDays className="w-4 h-4" />
+            </a>
+            <a
+              href="#servicios"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-mint text-mint hover:bg-mint-pale font-dm font-medium transition-colors duration-200"
+            >
+              Ver Servicios
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
 
-          {/* Right column — image */}
-          <div className="relative flex justify-center lg:justify-end">
-            <img
-              src="/hero_consultorio.jpg"
-              alt="Dra. Andrea Carrillo"
-              className="rounded-3xl shadow-sm w-full max-w-md object-cover aspect-[4/5]"
-            />
+          {/* Mini stats */}
+          <div className="flex flex-wrap gap-6 pt-2">
+            {[
+              { value: '8+', label: 'Años de Experiencia' },
+              { value: '2.000+', label: 'Pacientes' },
+              { value: '⭐ 4.9/5', label: 'Calificación' },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="font-cormorant text-2xl font-bold text-carbon">{s.value}</p>
+                <p className="font-dm text-xs text-slate">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Floating booking card */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="bg-white rounded-2xl shadow-md p-6 lg:p-8">
+      {/* Tarjeta de reserva — ancla al fondo */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10">
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-md p-6 lg:p-8">
           <div className="flex items-center gap-2 mb-4">
             <CalendarDays className="w-5 h-5 text-mint" />
             <h3 className="font-cormorant text-xl font-semibold text-carbon">Reservar Cita Rápida</h3>
@@ -94,7 +94,7 @@ export default function Hero() {
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
-              className="col-span-1 lg:col-span-1 px-4 py-2.5 rounded-xl border border-gray-200 font-dm text-sm text-carbon placeholder-slate focus:outline-none focus:border-mint transition-colors duration-200"
+              className="px-4 py-2.5 rounded-xl border border-gray-200 font-dm text-sm text-carbon placeholder-slate focus:outline-none focus:border-mint transition-colors duration-200"
             />
             <input
               type="tel"
@@ -131,6 +131,7 @@ export default function Hero() {
           </form>
         </div>
       </div>
+
     </section>
   );
 }
