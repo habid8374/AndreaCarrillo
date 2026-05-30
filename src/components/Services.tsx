@@ -6,31 +6,37 @@ const services = [
     icon: Sparkles,
     name: 'Blanqueamiento Dental',
     desc: 'Recupera el brillo natural de tu sonrisa con nuestra tecnología LED de última generación, sin dañar el esmalte.',
+    img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
     icon: Activity,
     name: 'Ortodoncia',
     desc: 'Alineamos tu sonrisa con brackets tradicionales o alineadores invisibles adaptados a tu estilo de vida.',
+    img: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
     icon: Anchor,
     name: 'Implantes Dentales',
     desc: 'Solución permanente y estética para la pérdida dental. Recupera la funcionalidad y confianza en tu sonrisa.',
+    img: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
     icon: Zap,
     name: 'Endodoncia',
     desc: 'Salvamos tu diente natural con tratamientos de conducto modernos, indoloros y de alta precisión.',
+    img: 'https://images.unsplash.com/photo-1588776814546-1ffedde5d1f4?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
     icon: Heart,
     name: 'Odontopediatría',
     desc: 'Cuidamos la salud oral de los más pequeños en un ambiente amigable, divertido y libre de miedo.',
+    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&h=360&q=80',
   },
   {
     icon: Star,
     name: 'Estética Dental',
     desc: 'Diseño de sonrisa digital, carillas de porcelana y tratamientos estéticos para una imagen impecable.',
+    img: 'https://images.unsplash.com/photo-1581391569744-6e4d5d0b9e2e?auto=format&fit=crop&w=600&h=360&q=80',
   },
 ];
 
@@ -70,48 +76,57 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ icon: Icon, name, desc }, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {services.map(({ icon: Icon, name, desc, img }, i) => (
             <div
               key={name}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="service-card group relative rounded-2xl bg-white border border-gray-100 p-7 shadow-sm cursor-pointer overflow-hidden"
+              className="service-card group relative rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden cursor-pointer"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              {/* Línea dorada animada en la parte superior */}
-              <div className="absolute top-0 left-0 h-[3px] w-0 bg-gradient-to-r from-mint to-gold rounded-t-2xl transition-all duration-500 group-hover:w-full" />
+              {/* Imagen con zoom en hover */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={img}
+                  alt={name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Overlay suave sobre la imagen */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-              {/* Fondo suave al hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-mint-pale/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-2xl" />
+                {/* Línea dorada animada al hover en el borde inferior de la imagen */}
+                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-mint to-gold transition-all duration-500 group-hover:w-full" />
+              </div>
 
-              <div className="relative z-10 flex flex-col gap-4 h-full transition-transform duration-300 group-hover:-translate-y-1">
-
-                {/* Icono con animación de scale */}
-                <div className="w-12 h-12 rounded-xl bg-mint-pale flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-mint group-hover:shadow-md">
+              {/* Ícono flotante entre imagen y contenido */}
+              <div className="relative -mt-5 ml-5">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-md border border-gray-100 flex items-center justify-center transition-all duration-300 group-hover:bg-mint group-hover:scale-110 group-hover:shadow-lg">
                   <Icon
-                    className="w-6 h-6 text-mint transition-colors duration-300 group-hover:text-white"
+                    className="w-5 h-5 text-mint transition-colors duration-300 group-hover:text-white"
                     strokeWidth={1.5}
                   />
                 </div>
+              </div>
 
+              {/* Contenido */}
+              <div className="px-6 pt-3 pb-6 flex flex-col gap-3 transition-transform duration-300 group-hover:-translate-y-0.5">
                 <h3 className="font-cormorant text-xl font-semibold text-carbon group-hover:text-mint transition-colors duration-300">
                   {name}
                 </h3>
-
                 <p className="font-dm text-sm text-slate leading-relaxed flex-1">
                   {desc}
                 </p>
-
                 <a
                   href="#contacto"
                   className="inline-flex items-center gap-1 font-dm text-sm font-medium text-mint hover:text-mint-dark transition-all duration-200 group-hover:gap-2"
                 >
-                  Ver más <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  Ver más
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>
 
-              {/* Sombra elevada al hover */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_20px_40px_-12px_rgba(201,169,110,0.25)]" />
+              {/* Sombra dorada al hover */}
+              <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_20px_40px_-12px_rgba(201,169,110,0.3)]" />
             </div>
           ))}
         </div>
