@@ -47,9 +47,9 @@ export default function WhyChooseUs() {
           {/* Image */}
           <div>
             <img
-              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500"
-              alt="Consultorio dental moderno"
-              className="rounded-2xl shadow-sm w-full object-cover aspect-[4/3]"
+              src="/hero_consultorio.jpg"
+              alt="Dra. Andrea Carrillo en consultorio"
+              className="rounded-2xl shadow-sm w-full object-cover aspect-[4/5]"
             />
           </div>
         </div>
