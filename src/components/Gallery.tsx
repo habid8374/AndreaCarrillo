@@ -28,24 +28,14 @@ export default function Gallery() {
             >
               <video
                 src={src}
+                autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
               />
               {/* Overlay degradado inferior */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              {/* Ícono play visible antes del hover */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-0 transition-opacity duration-300">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
               {/* Label */}
               <p className="absolute bottom-3 left-0 right-0 text-center font-dm text-xs text-white font-medium px-2">
                 {label}
