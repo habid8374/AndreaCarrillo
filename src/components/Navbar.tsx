@@ -28,13 +28,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-32 lg:h-36">
+        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-36">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-2">
             <img
               src="/SaveClip.App_458621932_553600630569185_3755797432906446027_n.jpg"
               alt="Andrea Carrillo Odontología Especializada"
-              className="h-32 w-auto object-contain"
+              className="h-14 sm:h-16 lg:h-32 w-auto object-contain"
             />
           </a>
 
