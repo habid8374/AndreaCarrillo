@@ -25,10 +25,10 @@ export default function Hero() {
       />
 
       {/* Desktop: degradado izquierda → derecha — texto legible a la izq, foto visible a la der */}
-      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/90 via-white/55 to-transparent" />
+      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/80 via-white/40 to-transparent" />
 
       {/* Móvil: degradado arriba → abajo */}
-      <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-white/90 via-white/65 to-white/20" />
+      <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-white/80 via-white/45 to-white/10" />
 
       {/* Contenido centrado verticalmente */}
       <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-8 pt-28 lg:pt-36 pb-8">
