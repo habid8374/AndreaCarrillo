@@ -1,16 +1,15 @@
-const images = [
-  { src: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=400', alt: 'Resultado blanqueamiento' },
-  { src: 'https://images.unsplash.com/photo-1588776814546-1ffbb3dcface?w=400', alt: 'Sonrisa perfecta' },
-  { src: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400', alt: 'Antes y después' },
-  { src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400', alt: 'Tratamiento dental' },
-  { src: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=400', alt: 'Sonrisa natural' },
-  { src: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400', alt: 'Resultado implante' },
+const videos = [
+  { src: '/resultado1.mp4', label: 'Transformación de Sonrisa' },
+  { src: '/resultado2.mp4', label: 'Blanqueamiento Dental' },
+  { src: '/resultado3.mp4', label: 'Ortodoncia' },
+  { src: '/resultado4.mp4', label: 'Estética Dental' },
 ];
 
 export default function Gallery() {
   return (
-    <section id="galeria" className="bg-white py-20 lg:py-24">
+    <section id="galeria" className="bg-bone py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="text-center mb-12">
           <p className="font-dm text-xs font-semibold text-mint uppercase tracking-widest mb-2">
             Nuestros Resultados
@@ -21,17 +20,40 @@ export default function Gallery() {
           <p className="font-dm text-slate mt-3">Transformaciones reales de nuestros pacientes</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {images.map(({ src, alt }) => (
-            <div key={src} className="overflow-hidden rounded-2xl">
-              <img
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {videos.map(({ src, label }) => (
+            <div
+              key={src}
+              className="group relative rounded-2xl overflow-hidden shadow-sm bg-black aspect-[9/16]"
+            >
+              <video
                 src={src}
-                alt={alt}
-                className="w-full h-60 object-cover hover:scale-105 transition-transform duration-300"
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
               />
+              {/* Overlay degradado inferior */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              {/* Ícono play visible antes del hover */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-0 transition-opacity duration-300">
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+              {/* Label */}
+              <p className="absolute bottom-3 left-0 right-0 text-center font-dm text-xs text-white font-medium px-2">
+                {label}
+              </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
