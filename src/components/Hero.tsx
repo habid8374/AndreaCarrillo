@@ -24,14 +24,17 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Desktop: degradado izquierda → derecha — texto legible a la izq, foto visible a la der */}
-      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/70 via-white/30 to-transparent" />
+      {/* Desktop: degradado izquierda → derecha */}
+      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/75 via-white/30 to-transparent" />
 
       {/* Móvil: degradado arriba → abajo */}
-      <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-white/70 via-white/30 to-transparent" />
+      <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-white/75 via-white/30 to-transparent" />
+
+      {/* Fade blanco en la parte superior — integra el hero con el navbar sin transparency */}
+      <div className="absolute top-0 left-0 right-0 h-36 lg:h-36 bg-gradient-to-b from-white via-white/60 to-transparent z-10" />
 
       {/* Contenido centrado verticalmente */}
-      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-8 pt-28 lg:pt-36 pb-8">
+      <div className="relative z-20 flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-8 pt-32 lg:pt-40 pb-8">
         <div className="lg:max-w-xl space-y-6">
 
           <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-mint-pale text-mint text-sm font-dm font-medium">
