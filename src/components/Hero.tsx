@@ -17,22 +17,22 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden min-h-screen flex flex-col">
 
-      {/* Foto de fondo — ocupa toda la pantalla */}
+      {/* Foto de la dra frente a su branding — fondo de toda la primera pantalla */}
       <img
-        src="/hero_consultorio.jpg"
+        src="/SaveClip.App_549189014_18408857845115959_6729279725912701440_n.jpg"
         alt="Dra. Andrea Carrillo"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Overlay desktop: degradado izquierda → derecha */}
-      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/92 via-white/65 to-transparent" />
+      {/* Desktop: degradado izquierda → derecha — texto legible a la izq, foto visible a la der */}
+      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/90 via-white/55 to-transparent" />
 
-      {/* Overlay móvil: degradado arriba → abajo */}
-      <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-white/88 via-white/70 to-white/30" />
+      {/* Móvil: degradado arriba → abajo */}
+      <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-white/90 via-white/65 to-white/20" />
 
-      {/* Contenido principal — centrado verticalmente */}
+      {/* Contenido centrado verticalmente */}
       <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-8 pt-28 lg:pt-36 pb-8">
-        <div className="w-full lg:max-w-xl space-y-6">
+        <div className="lg:max-w-xl space-y-6">
 
           <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-mint-pale text-mint text-sm font-dm font-medium">
             ✦ Odontología de Confianza
@@ -77,10 +77,11 @@ export default function Hero() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
-      {/* Tarjeta de reserva — ancla al fondo */}
+      {/* Tarjeta de reserva al fondo */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10">
         <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-md p-6 lg:p-8">
           <div className="flex items-center gap-2 mb-4">
