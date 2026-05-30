@@ -15,7 +15,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="relative overflow-hidden bg-white pt-20 lg:pt-32 pb-32">
+    <section id="inicio" className="relative overflow-hidden bg-white pt-24 lg:pt-32 pb-32">
       {/* Decorative blob */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-mint-pale rounded-bl-[120px] -z-0 opacity-60" />
 
