@@ -280,9 +280,72 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link to="/galeria" onClick={() => setMenuOpen(false)} className="block py-2.5 px-2 font-dm text-sm text-carbon hover:text-mint">Galería</Link>
-          <Link to="/precios" onClick={() => setMenuOpen(false)} className="block py-2.5 px-2 font-dm text-sm text-carbon hover:text-mint">Precios</Link>
-          <button onClick={() => handleAnchorNav('#contacto')} className="block w-full text-left py-2.5 px-2 font-dm text-sm text-carbon hover:text-mint">Contacto</button>
+          {/* Mobile Galería */}
+          <div>
+            <button onClick={() => setMobileExpanded(e => e === 'galeria' ? null : 'galeria')} className="flex items-center justify-between w-full py-2.5 px-2 font-dm text-sm text-carbon">
+              Galería <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === 'galeria' ? 'rotate-180 text-mint' : ''}`} />
+            </button>
+            {mobileExpanded === 'galeria' && (
+              <div className="pl-4 space-y-1 pb-1">
+                {galeriaMenu.map(({ name, slug }) => (
+                  <Link key={slug} to={`/galeria?cat=${slug}`} onClick={() => setMenuOpen(false)} className="block py-2 font-dm text-sm text-slate hover:text-mint">
+                    {name}
+                  </Link>
+                ))}
+                <Link to="/galeria" onClick={() => setMenuOpen(false)} className="block py-2 font-dm text-sm text-mint font-medium">
+                  Ver galería completa →
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Precios */}
+          <div>
+            <button onClick={() => setMobileExpanded(e => e === 'precios' ? null : 'precios')} className="flex items-center justify-between w-full py-2.5 px-2 font-dm text-sm text-carbon">
+              Precios <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === 'precios' ? 'rotate-180 text-mint' : ''}`} />
+            </button>
+            {mobileExpanded === 'precios' && (
+              <div className="pl-4 space-y-1 pb-1">
+                {preciosMenu.map(({ name, price, popular }) => (
+                  <Link key={name} to="/precios" onClick={() => setMenuOpen(false)} className="flex items-center justify-between py-2 pr-2 font-dm text-sm">
+                    <span className="text-slate hover:text-mint flex items-center gap-2">
+                      {name}
+                      {popular && <span className="px-2 py-0.5 bg-mint text-white text-[10px] rounded-full">Popular</span>}
+                    </span>
+                    <span className="text-mint font-semibold text-xs">{price}</span>
+                  </Link>
+                ))}
+                <Link to="/precios" onClick={() => setMenuOpen(false)} className="block py-2 font-dm text-sm text-mint font-medium">
+                  Ver comparativa completa →
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Contacto */}
+          <div>
+            <button onClick={() => setMobileExpanded(e => e === 'contacto' ? null : 'contacto')} className="flex items-center justify-between w-full py-2.5 px-2 font-dm text-sm text-carbon">
+              Contacto <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === 'contacto' ? 'rotate-180 text-mint' : ''}`} />
+            </button>
+            {mobileExpanded === 'contacto' && (
+              <div className="pl-4 pr-2 pb-3 space-y-3">
+                {contactMenu.map(({ icon: Icon, text }) => (
+                  <div key={text} className="flex items-start gap-2.5">
+                    <div className="w-6 h-6 rounded-lg bg-mint-pale flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon className="w-3 h-3 text-mint" strokeWidth={1.5} />
+                    </div>
+                    <span className="font-dm text-xs text-slate leading-snug">{text}</span>
+                  </div>
+                ))}
+                <Link to="/agendar" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-2.5 bg-mint hover:bg-mint-dark text-white text-sm font-dm rounded-xl transition-colors duration-200">
+                  <CalendarDays className="w-4 h-4" /> Agendar Valoración
+                </Link>
+                <button onClick={() => { setMenuOpen(false); handleAnchorNav('#contacto'); }} className="w-full py-2 border border-gray-200 text-carbon text-sm font-dm rounded-xl hover:bg-gray-50 transition-colors duration-200">
+                  Enviar mensaje
+                </button>
+              </div>
+            )}
+          </div>
 
           <a href="https://www.instagram.com/ortodoncia_andreacarrillo?igsh=MTlkZW9odjhuMDBhZw==" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 py-2.5 px-2 font-dm text-sm text-slate hover:text-mint">
             <InstagramIcon /> @ortodoncia_andreacarrillo
