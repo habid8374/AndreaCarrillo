@@ -27,7 +27,7 @@ export default function Hero() {
       <img
         src="/SaveClip.App_549189014_18408857845115959_6729279725912701440_n.jpg"
         alt="Dra. Andrea Carrillo"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-top"
       />
 
       {/* ── Gradiente desktop: oscuro izquierda → transparente derecha ── */}
